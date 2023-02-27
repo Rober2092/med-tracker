@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Medication Tracker</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="app.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Medication Tracker</h1>
+    <form>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="dosage">Dosage:</label>
+        <input type="text" class="form-control" id="dosage" name="dosage" required>
+      </div>
+
+      <div class="form-group">
+        <label for="frequency">Frequency:</label>
+        <select class="form-control" id="frequency" name="frequency" required>
+          <option value="daily">Daily</option>
+          <option value="weekly">Weekly</option>
+          <option value="monthly">Monthly</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="quantity">Quantity:</label>
+        <input type="number" class="form-control" id="quantity" name="quantity" min="1" required>
+      </div>
+
+      <div class="form-group">
+        <label for="reminder">Set a reminder:</label>
+        <input type="datetime-local" class="form-control" id="reminder" name="reminder">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+
+    <hr>
+
+    <h2>Medication List</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Dosage</th>
+          <th>Frequency</th>
+          <th>Quantity</th>
+          <th>Next Reminder</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="medication-list">
+        
+      </tbody>
+    </table>
+
+    <hr>
+
+    <h2>Medication Chart</h2>
+    <canvas id="medication-chart"></canvas>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
